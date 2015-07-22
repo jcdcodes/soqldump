@@ -92,6 +92,10 @@ wrote `soqldump` because for some reason `force` doesn't have a
 version of `force query` that doesn't append `where rownum < 2001` to
 the end of your query.  It's maddening.
 
+**Q:** How about running arbitrary SOQL?
+
+**A:** Edit the `soql` variable in "section 2" of `soqldump.py`.
+
 # License
 
 Eclipse Public License v1.0 --- See LICENSE.
