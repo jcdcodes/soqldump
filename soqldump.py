@@ -33,9 +33,9 @@ with open(".sfauth") as f:
     for line in f:
         k,v = line.split('=')
         os.environ[k] = v.strip()
-username = os.environ['SFUSERNAME'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG: BOTHER JOSH D
-password = os.environ['SFPASSWORD'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG: BOTHER JOSH D
-security_token = os.environ['SFSECURITYTOKEN'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG: BOTHER JOSH D
+username = os.environ['SFUSERNAME'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG
+password = os.environ['SFPASSWORD'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG
+security_token = os.environ['SFSECURITYTOKEN'] # IF YOU SEE AUTH CREDENTIALS CHECKED IN HERE THAT'S A BUG
 
 ######################################
 ##
@@ -45,7 +45,7 @@ security_token = os.environ['SFSECURITYTOKEN'] # IF YOU SEE AUTH CREDENTIALS CHE
 comma_separated_column_names = sys.argv[1]
 table = sys.argv[2]
 
-soql = u"SELECT %s FROM %s"
+soql = u"SELECT %s FROM %s" ## <-- this is the SOQL we will run.  any valid SOQL should be fine.
 
 
 ######################################
