@@ -1,5 +1,5 @@
 # soqldump
-A simple script to dump arbitrary Salesforce SOQL query results to CSV.
+A simple script to dump Salesforce data to CSV.
 
 # Install/config
 
