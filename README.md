@@ -98,4 +98,4 @@ the end of your query.  It's maddening.
 
 # License
 
-Eclipse Public License v1.0 --- See LICENSE.
+MIT --- See LICENSE.
