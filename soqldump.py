@@ -9,8 +9,15 @@ from simple_salesforce import Salesforce
 ##
 ## 1. To authenticate to SF, create a plain text file called .sfauth
 ## (not .sfauth.txt, nor sfauth.txt, nor sfauth.docx) that has your
-## username, password, and security token.  Restrict permissions on
-## .sfauth by running "chmod 600 .sfauth" or similar.
+## username, password, and security token.  The file needs to contain
+## exactly three lines:
+##
+## SFUSERNAME=john.doe@nextsteplivinginc.com
+## SFPASSWORD=secret1234
+## SFSECURITYTOKEN=RrxsckFWsdVjf8GpxKlxNTiJz
+##
+## Restrict permissions on .sfauth by running "chmod 600 .sfauth" or
+## similar.
 ##
 ## 2. The SOQL query we will run is defined here.  It could be any
 ## SOQL query, but I'm just getting a comma separated list of columns
@@ -83,6 +90,18 @@ class UnicodeReader:
     def __iter__(self):
         return self
 
+
+def do_encode(s):
+    res = s
+    try:
+        res = s.encode("utf-8")
+    except AttributeError:
+        try:
+            res = str(s)
+        except:
+            pass
+    return res
+
 class UnicodeWriter:
     """
     A CSV writer which will write rows to CSV file "f",
@@ -99,7 +118,7 @@ class UnicodeWriter:
 
     def writerow(self, row):
         try:
-            self.writer.writerow([s and s.encode("utf-8") or '' for s in row])
+            self.writer.writerow([s and do_encode(s) or '' for s in row])
         except AttributeError:
             print
             self.skipped_rows = self.skipped_rows + 1
