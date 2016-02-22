@@ -94,7 +94,11 @@ the end of your query.  It's maddening.
 
 **Q:** How about running arbitrary SOQL?
 
-**A:** Edit the `soql` variable in "section 2" of `soqldump.py`.
+**A:** Edit the `soql` variable in the "Query stuff" section of `soqldump.py`.
+
+**Q:** Can't I just have a SQL interface to my Salesforce data?
+
+**A:** If you have a lot of extra money to spend then [Heroku Connect](https://www.heroku.com/connect) will probably do the trick.
 
 # License
 
