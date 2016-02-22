@@ -11,7 +11,7 @@ environment variables.
 ## Installing prerequisites
 
 If you are on a Mac or Linux machine you already have python
-installed.  (You want Python 2.7.x, not Python 3.x.)  If you are on
+installed and can skip to the next paragraph.  (You want Python 2.7.x, not Python 3.x.)  If you are on
 Windows you'll probably need to download from http://python.org and
 install as appropriate.  You need to be able to successfully say
 `python` and `pip` from a command prompt.  (The tutorial installation
